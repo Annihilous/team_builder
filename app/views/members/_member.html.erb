@@ -1,0 +1,8 @@
+<!-- _member.html.erb -->
+
+<li>
+	<%= member.name %>
+	<%= member.team %>
+	<%= member.leader %>
+	<%= link_to "Rename", edit_member_path(member), remote: true %>
+</li>

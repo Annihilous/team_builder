@@ -1,0 +1,18 @@
+<!-- ajax.html.erb -->
+
+<script type="text/javascript">
+	function loadMembers(){
+		$.getJSON("/members.json", function(data){
+			var output = "";
+			$.each(data, function (index) {
+				output += "<b><i>" + data[index].name + " is on Team " + data[index].team + "</i></b><br>";
+			});
+			$("#members").html(output);
+		});
+	}
+
+</script>
+
+<div id="members">
+	<a href="javascript:loadMembers();">Content words</a>
+</div>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'New Teammate', new_member_path, remote: true %>
+
+<div id="member-form" style="display:none;"></div>
+
+<h1>Listing Members</h1>
+
+<div id="members">
+  <ul>
+    <%= render @members %>
+  </ul>
+</div>
+
+
+
+
+<!-- <table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Team</th>
+      <th>Leader</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @members.each do |member| %>
+      <tr>
+        <td><%= member.name %></td>
+        <td><%= member.team %></td>
+        <td><%= member.leader %></td>
+        <td><%= link_to 'Show', member %></td>
+        <td><%= link_to 'Edit', edit_member_path(member) %></td>
+        <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Member', new_member_path %> -->
