@@ -5,4 +5,5 @@
 	<%= member.team %>
 	<%= member.leader %>
 	<%= link_to "Rename", edit_member_path(member), remote: true %>
+	<%= link_to "Kick Out", member, remote: true, method: :delete, data: { confirm: 'Are you sure?'} %>
 </li>
