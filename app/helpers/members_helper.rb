@@ -14,13 +14,11 @@ module MembersHelper
 		leftover = pool.length % size
 
 		if size > pool.length
-
 			Member.find(pool[0].id).leader = true
 			members.each do | member |
 				member.team = 1
 			end
 		end
-
 
 		team_it = 1
 		teams.times do
