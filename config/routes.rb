@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+
   resources :members
 
   root "members#index"
 
   get "ajax" => "members#ajax"
+
+  post "team_view" => "members#team_view"
+
+  
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

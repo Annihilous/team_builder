@@ -4,9 +4,15 @@ class MembersController < ApplicationController
 
   # GET /members
   # GET /members.json
+  include MembersHelper
 
 def ajax
 end
+
+  def team_view
+    team_assign(params[:size])
+    @members = Member.all
+  end
 
   # GET /members/new
   def new

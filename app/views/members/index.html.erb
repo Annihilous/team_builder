@@ -12,9 +12,12 @@
   </ul>
 </div>
 
-
-
-
+<div>
+  <%= form_tag('/team_view') do %>
+      <%= number_field_tag :size, placeholder: "Enter team size" %>
+      <%= submit_tag "Create Team" %>
+  <% end %>
+</div>
 <!-- <table>
   <thead>
     <tr>
@@ -26,19 +29,19 @@
   </thead>
 
   <tbody>
-    <% @members.each do |member| %>
+    <%# @members.each do |member| %>
       <tr>
-        <td><%= member.name %></td>
-        <td><%= member.team %></td>
-        <td><%= member.leader %></td>
-        <td><%= link_to 'Show', member %></td>
-        <td><%= link_to 'Edit', edit_member_path(member) %></td>
-        <td><%= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%#= member.name %></td>
+        <td><%#= member.team %></td>
+        <td><%#= member.leader %></td>
+        <td><%#= link_to 'Show', member %></td>
+        <td><%#= link_to 'Edit', edit_member_path(member) %></td>
+        <td><%#= link_to 'Destroy', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+    <%# end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Member', new_member_path %> -->
+<%#= link_to 'New Member', new_member_path %> -->
