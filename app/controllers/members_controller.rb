@@ -11,7 +11,9 @@ end
 
   def team_view
     team_assign(params[:size])
-    @members = Member.all
+    
+    @members = Member.order(:team)
+
   end
 
   # GET /members/new

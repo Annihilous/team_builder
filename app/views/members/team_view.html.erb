@@ -1,6 +1,5 @@
 <!-- team_view.html.erb -->
 
 <% @members.each do | member | %>
-	<%= member.name %> is assigned to Team <%= member.team %>
-	<br/>
+	Team <%= member.team %> Leader? <%= member.leader %> <%= member.name %><br />
 <%end%>
