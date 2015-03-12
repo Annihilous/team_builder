@@ -6,14 +6,12 @@ class MembersController < ApplicationController
   # GET /members.json
   include MembersHelper
 
-def ajax
-end
+  def ajax
+  end
 
   def team_view
-    team_assign(params[:size])
-    
+    @teams = team_assign(params[:size])    
     @members = Member.order(:team)
-
   end
 
   # GET /members/new

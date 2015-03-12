@@ -1,5 +1,29 @@
 <!-- team_view.html.erb -->
 
-<% @members.each do | member | %>
-	Team <%= member.team %> Leader? <%= member.leader %> <%= member.name %><br />
-<%end%>
+<br/>
+<% if @teams == 1 %>
+	You made 1 team.
+<%else%>
+	You made <%= @teams %> teams.
+	<%end%>
+<br/>
+
+<% team_it = 1 %>
+
+	<% @teams.times do %>
+	<div class="well">
+		Team <%= team_it %><br />
+			<% @members.each do | member | %>
+				<% if member.team == team_it && member.leader == true %>
+					Leader: <b><%= member.name %></b><br />
+				<%end%>
+			<%end%>
+			<% @members.each do | member | %>
+				<% if member.team == team_it && member.leader == false %>
+					<%= member.name %><br />
+				<%end%>
+			<%end%>
+			<% team_it += 1 %>
+	</div>
+	<%end%>
+

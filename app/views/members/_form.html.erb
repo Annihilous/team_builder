@@ -1,7 +1,7 @@
 <%= form_for @member, remote: true do |f| %>
 
     <%= f.text_field :name, placeholder: "Name" %>
-    <%= f.number_field :team, placeholder: "Team" %>
+    <%= f.number_field :team, value: 0 %>
     <%= f.check_box :leader, placeholder: false %>
 
     <%= f.button :submit %>

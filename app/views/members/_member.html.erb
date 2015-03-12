@@ -1,9 +1,15 @@
 <!-- _member.html.erb -->
 
-<li>
-	<%= member.name %>
-	<%= member.team %>
-	<%= member.leader %>
-	<%= link_to "Rename", edit_member_path(member), remote: true %>
-	<%= link_to "Kick Out", member, remote: true, method: :delete, data: { confirm: 'Are you sure?'} %>
-</li>
+<ul>
+		<div class="col-md-4">
+			<div class="well">
+			<% if member.leader == true %>
+				<b><%= member.name %></b>
+			<%else%>
+				<%= member.name %>
+			<%end%>
+			<br />
+			<%= link_to "Rename", edit_member_path(member), remote: true %>
+			<%= link_to "Kick Out", member, remote: true, method: :delete, data: { confirm: 'Are you sure?'} %>
+			</div>
+</ul>

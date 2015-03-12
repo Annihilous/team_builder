@@ -2,14 +2,41 @@
 <html>
 <head>
   <title>TeamBuilder</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<div class="container">
-<%= yield %>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Home", root_path, class: "navbar-brand" %>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav centerize">
+      	<li>
+			  <%= form_tag('/team_view') do %>
+			      <%#= number_field_tag :size, placeholder: "Enter team size" %>
+			      <%= select_tag "size", options_for_select(1..Member.all.length), prompt: "Enter team size" %>
+			      <%= submit_tag "Create Team" %>
+			  <% end %>
+		</li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<div class="container text-center buffer">
+	<%= yield %>
 <div>
 
 </body>
