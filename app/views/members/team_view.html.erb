@@ -4,26 +4,33 @@
 <% if @teams == 1 %>
 	You made 1 team.
 <%else%>
-	You made <%= @teams %> teams.
-	<%end%>
-<br/>
+	<h3>Gracious leader, you have commanded the assembly of <%= @teams %> loyal gatherings.</h3>
+<%end%>
+<br/><br/>
 
 <% team_it = 1 %>
+<% team_names = @team_names.shuffle %>
 
 	<% @teams.times do %>
-	<div class="well">
-		Team <%= team_it %><br />
-			<% @members.each do | member | %>
-				<% if member.team == team_it && member.leader == true %>
-					Leader: <b><%= member.name %></b><br />
+	<div class="col-md-4 team-display">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<b><%= team_names[team_it-1] %></b><br />
+			</div>
+			<div class="panel-body">
+				<% @members.each do | member | %>
+					<% if member.team == team_it && member.leader == true %>
+						<b>Leader: </b><%= member.name %><br />
+					<%end%>
 				<%end%>
-			<%end%>
-			<% @members.each do | member | %>
-				<% if member.team == team_it && member.leader == false %>
-					<%= member.name %><br />
+				<% @members.each do | member | %>
+					<% if member.team == team_it && member.leader == false %>
+						<%= member.name %><br />
+					<%end%>
 				<%end%>
-			<%end%>
-			<% team_it += 1 %>
+				<% team_it += 1 %>
+			</div>
+		</div>
 	</div>
 	<%end%>
 

@@ -12,6 +12,7 @@ class MembersController < ApplicationController
   def team_view
     @teams = team_assign(params[:size])    
     @members = Member.order(:team)
+    @team_names = ["Sinister Blade", "Humanity", "Divine Elegence", "Heirs of the Sun", "Eliminator", "Arcane Fire", "Beryllium", "Cognitive Dissonance", "End Love", "Outlaw Gun", "Error 404", "Primal Rage", "Hope of Glory", "Reflective Hearts", "Grey Cell", "Undefined Method", "Wyrm", "Midnight Sun", "Double Echo", "Third Estate", "Nova Corps", "Obtenebration", "Cup of Kings", "Ten Foot Pole", "Liquid Rain", "Shining Alma", "Network Node","Delicate Fist", "Chronolock", "Terminal Button"]
   end
 
   # GET /members/new

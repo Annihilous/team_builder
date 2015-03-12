@@ -1,15 +1,17 @@
 <!-- _member.html.erb -->
 
 <ul>
-		<div class="col-md-4">
-			<div class="well">
-			<% if member.leader == true %>
-				<b><%= member.name %></b>
-			<%else%>
-				<%= member.name %>
-			<%end%>
-			<br />
-			<%= link_to "Rename", edit_member_path(member), remote: true %>
-			<%= link_to "Kick Out", member, remote: true, method: :delete, data: { confirm: 'Are you sure?'} %>
+		<div class="col-md-3">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+				<% if member.leader == true %>
+					<b><%= member.name %></b>
+				<%else%>
+					<%= member.name %>
+				<%end%>
+				</div>
+				<%= link_to "Rename", edit_member_path(member), remote: true %><br />
+				<%= link_to "Kick Out", member, remote: true, method: :delete, data: { confirm: 'Are you sure?'} %>
 			</div>
+		</div>
 </ul>
