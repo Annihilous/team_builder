@@ -1,6 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+	min-height: 100%;
+}
+
 .buffer {
 	margin-top: 50px;
 }
@@ -19,6 +23,6 @@
 
 .background-color {
 	background: #78B7ED;
-	min-height: 100%;
-	height: auto;
+	height: 100%;
 }
+
