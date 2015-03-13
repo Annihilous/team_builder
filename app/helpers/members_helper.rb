@@ -52,6 +52,7 @@ module MembersHelper
 					member.save
 					leadership = 1
 				end
+				total_teams += 1
 			else
 				team_it = 1
 				leftover.times do
